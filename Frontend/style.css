@@ -1,0 +1,1674 @@
+/* =========================================================
+   AI RESUME BUILDER — PINK / WHITE DESIGN
+   Existing functionality and class names preserved
+========================================================= */
+
+
+/* ================================
+   RESET
+================================ */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background: #FFF7F9;
+    color: #292329;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* ================================
+   DESIGN SYSTEM
+================================ */
+
+:root {
+
+    --primary: #D88C9A;
+    --primary-hover: #C87586;
+
+    --background: #FFF7F9;
+    --white: #FFFFFF;
+
+    --text: #292329;
+    --text-light: #7D6D73;
+
+    --border: #F0DCE1;
+
+    --input: #FFFAFB;
+
+    --success: #4E8B68;
+
+    --pink-light: #FFF0F3;
+    --pink-soft: #FBE1E7;
+    --pink-medium: #D8A7B1;
+    --plum: #6D4C5B;
+
+    --shadow-sm:
+        0 2px 10px rgba(109, 76, 91, .06);
+
+    --shadow:
+        0 12px 40px rgba(109, 76, 91, .10);
+
+    --radius: 18px;
+
+    --transition: .25s ease;
+
+    --container: 1180px;
+
+}
+
+
+/* ================================
+   TYPOGRAPHY
+================================ */
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--text);
+}
+
+h1 {
+
+    font-size: 3.4rem;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    letter-spacing: -1.5px;
+
+}
+
+h2 {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+h3 {
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+}
+
+p {
+
+    color: var(--text-light);
+
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container {
+
+    width: min(92%, var(--container));
+
+    margin: auto;
+
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+
+    background: rgba(255, 255, 255, .92);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: 0 4px 20px rgba(109, 76, 91, .06);
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+.header .container {
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+#name {
+
+    font-style: italic;
+
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    border: 1px solid var(--pink-soft);
+
+    padding: 8px 14px 8px 8px;
+
+    border-radius: 16px;
+
+    color: var(--plum);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.logo-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #D88C9A,
+        #E8B5BF
+    );
+
+    color: white;
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    box-shadow:
+        0 5px 15px rgba(216, 140, 154, .25);
+
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+
+    padding: 90px 0 70px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(244, 196, 205, .25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(232, 181, 191, .20),
+            transparent 30%
+        );
+
+}
+
+.hero-content {
+
+    max-width: 760px;
+
+    text-align: center;
+
+}
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: var(--pink-light);
+
+    color: var(--plum);
+
+    border: 1px solid var(--pink-soft);
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.hero h1 {
+
+    margin-top: 28px;
+
+}
+
+.hero p {
+
+    margin-top: 26px;
+
+    font-size: 1.1rem;
+
+    max-width: 650px;
+
+    margin-inline: auto;
+
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.builder-card,
+.output-card {
+
+    background: rgba(255, 255, 255, .96);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow);
+
+    padding: 48px;
+
+    margin-bottom: 40px;
+
+}
+
+.builder-card,
+.output-card {
+
+    transition: .35s ease;
+
+}
+
+.builder-card:hover,
+.output-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 45px rgba(109, 76, 91, .13);
+
+}
+
+
+/* ================================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+
+    margin-bottom: 36px;
+
+}
+
+.section-heading p {
+
+    margin-top: 8px;
+
+}
+
+
+/* ================================
+   FORM GRID
+================================ */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+}
+
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 24px;
+
+}
+
+label {
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+    color: var(--plum);
+
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+input {
+
+    width: 100%;
+
+    height: 58px;
+
+    border: 1px solid var(--border);
+
+    background: var(--input);
+
+    border-radius: 14px;
+
+    padding: 0 18px;
+
+    font-size: 15px;
+
+    color: var(--text);
+
+    transition: var(--transition);
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+input::placeholder {
+
+    color: #B9A8AE;
+
+}
+
+input:hover {
+
+    border-color: #E2BBC4;
+
+    background: #FFFFFF;
+
+}
+
+input:focus {
+
+    background: white;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(216, 140, 154, .14);
+
+}
+
+
+/* ================================
+   TEXTAREAS
+================================ */
+
+textarea {
+
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    border: 1px solid var(--border);
+
+    background: var(--input);
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    font-size: 15px;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: var(--text);
+
+    transition: var(--transition);
+
+    outline: none;
+
+}
+
+textarea::placeholder {
+
+    color: #B9A8AE;
+
+}
+
+textarea:hover {
+
+    border-color: #E2BBC4;
+
+    background: #FFFFFF;
+
+}
+
+textarea:focus {
+
+    background: white;
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(216, 140, 154, .14);
+
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.generate-btn {
+
+    width: 100%;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #D88C9A,
+            #C87586
+        );
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    margin-top: 10px;
+
+    font-family: 'Poppins', sans-serif;
+
+    box-shadow:
+        0 10px 25px rgba(216, 140, 154, .22);
+
+}
+
+.generate-btn:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #C87586,
+            #B96678
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(216, 140, 154, .30);
+
+}
+
+.generate-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* ================================
+   EMPTY STATE
+================================ */
+
+.empty-state {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+}
+
+.empty-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFF0F3,
+            #FBE1E7
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 10px 25px rgba(216, 140, 154, .10);
+
+}
+
+.empty-state h3 {
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==========================================
+   OUTPUT CARD
+========================================== */
+
+.output-card {
+
+    min-height: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.generated-resume {
+
+    margin-top: 10px;
+
+}
+
+.generated-resume h1 {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+}
+
+.generated-resume h2 {
+
+    font-size: 1.1rem;
+
+    margin-top: 30px;
+
+    margin-bottom: 12px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.generated-resume p {
+
+    color: var(--text);
+
+    margin-bottom: 10px;
+
+}
+
+.generated-resume ul {
+
+    margin-left: 20px;
+
+    margin-bottom: 15px;
+
+}
+
+.generated-resume li {
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ==========================================
+   LOADING STATE
+========================================== */
+
+.loading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    padding: 70px;
+
+}
+
+.spinner {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 4px solid #F7DDE3;
+
+    border-top-color: var(--primary);
+
+    animation: spin .8s linear infinite;
+
+}
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================
+   ALERTS
+========================================== */
+
+.alert {
+
+    padding: 18px 22px;
+
+    border-radius: 14px;
+
+    margin-bottom: 20px;
+
+    font-weight: 500;
+
+}
+
+.alert-success {
+
+    background: #F0FAF4;
+
+    color: #356B4C;
+
+    border: 1px solid #C8E6D2;
+
+}
+
+.alert-error {
+
+    background: #FFF1F2;
+
+    color: #9F3D50;
+
+    border: 1px solid #F4C6CF;
+
+}
+
+
+/* ==========================================
+   BUTTON LOADING
+========================================== */
+
+.generate-btn.loading-btn {
+
+    pointer-events: none;
+
+    opacity: .8;
+
+}
+
+.generate-btn.loading-btn::after {
+
+    content: "";
+
+    width: 18px;
+
+    height: 18px;
+
+    margin-left: 10px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, .35);
+
+    border-top: 2px solid white;
+
+    animation: spin .8s linear infinite;
+
+    vertical-align: middle;
+
+}
+
+
+/* ==========================================
+   CARD HOVER
+========================================== */
+
+.builder-card,
+.output-card {
+
+    transition: .35s ease;
+
+}
+
+.builder-card:hover,
+.output-card:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==========================================
+   INPUT PLACEHOLDER ANIMATION
+========================================== */
+
+input,
+textarea {
+
+    transition:
+        border .25s,
+        box-shadow .25s,
+        background .25s;
+
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+
+    opacity: .45;
+
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #FFF0F3;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #E2BBC4;
+
+    border-radius: 50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #D8A7B1;
+
+}
+
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection {
+
+    background: #F4CBD4;
+
+    color: #292329;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px) {
+
+    h1 {
+
+        font-size: 2.7rem;
+
+    }
+
+    .builder-card,
+    .output-card {
+
+        padding: 36px;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .hero {
+
+        padding: 70px 0 45px;
+
+    }
+
+    h1 {
+
+        font-size: 2.25rem;
+
+    }
+
+    h2 {
+
+        font-size: 1.55rem;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .builder-card,
+    .output-card {
+
+        padding: 28px;
+
+        border-radius: 20px;
+
+    }
+
+}
+
+@media(max-width:520px) {
+
+    .header .container {
+
+        height: 68px;
+
+    }
+
+    .logo span {
+
+        font-size: .9rem;
+
+    }
+
+    .hero {
+
+        padding: 55px 0 35px;
+
+    }
+
+    h1 {
+
+        font-size: 1.9rem;
+
+    }
+
+    .badge {
+
+        font-size: .8rem;
+
+        padding: 8px 15px;
+
+    }
+
+    input {
+
+        height: 54px;
+
+    }
+
+    textarea {
+
+        min-height: 130px;
+
+    }
+
+    .generate-btn {
+
+        height: 56px;
+
+    }
+
+}
+
+
+/* ==========================================
+   PRINT
+========================================== */
+
+@media print {
+
+    body {
+
+        background: white;
+
+    }
+
+    .header,
+    .hero,
+    .generate-btn {
+
+        display: none;
+
+    }
+
+    .builder-card {
+
+        display: none;
+
+    }
+
+    .output-card {
+
+        border: none;
+
+        box-shadow: none;
+
+        padding: 0;
+
+        margin: 0;
+
+    }
+
+}
+
+
+/* ==========================================
+   FADE ANIMATION
+========================================== */
+
+.fade-in {
+
+    animation: fade .5s ease;
+
+}
+
+@keyframes fade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   UTILITIES
+========================================== */
+
+.text-center {
+
+    text-align: center;
+
+}
+
+.mt-1 {
+
+    margin-top: 10px;
+
+}
+
+.mt-2 {
+
+    margin-top: 20px;
+
+}
+
+.mt-3 {
+
+    margin-top: 30px;
+
+}
+
+.mt-4 {
+
+    margin-top: 40px;
+
+}
+
+.mb-1 {
+
+    margin-bottom: 10px;
+
+}
+
+.mb-2 {
+
+    margin-bottom: 20px;
+
+}
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* ==========================================
+   GENERATED RESUME
+========================================== */
+
+.resume {
+
+    width: 100%;
+
+    max-width: 820px;
+
+    margin: 0 auto;
+
+    padding: 48px;
+
+    background: #ffffff;
+
+    color: #292329;
+
+    font-family: 'Poppins', sans-serif;
+
+    line-height: 1.5;
+
+    box-sizing: border-box;
+
+}
+
+.resume-header {
+
+    text-align: center;
+
+    padding-bottom: 24px;
+
+    margin-bottom: 28px;
+
+    border-bottom: 2px solid #D8A7B1;
+
+}
+
+.resume-header h1 {
+
+    margin: 0 0 8px;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #6D4C5B;
+
+    font-family: 'Playfair Display', Georgia, serif;
+
+}
+
+.resume-header p {
+
+    margin: 4px 0;
+
+    font-size: 14px;
+
+    color: #7D6D73;
+
+}
+
+.resume-section {
+
+    margin-bottom: 24px;
+
+}
+
+.resume-section h2 {
+
+    margin: 0 0 10px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid #E8CCD2;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    color: #6D4C5B;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.resume-section p {
+
+    margin: 6px 0;
+
+    font-size: 14px;
+
+    color: #3F363B;
+
+}
+
+.resume-section ul {
+
+    margin: 8px 0;
+
+    padding-left: 20px;
+
+}
+
+.resume-section li {
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    color: #3F363B;
+
+}
+
+.resume-section strong {
+
+    color: #6D4C5B;
+
+}
+
+.resume-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+
+    gap: 12px;
+
+}
+
+
+/* ==========================================
+   PDF BUTTON
+========================================== */
+
+#downloadPdfBtn {
+
+    border: 1px solid #D8A7B1;
+
+    padding: 12px 24px;
+
+    border-radius: 12px;
+
+    background: #FFFFFF;
+
+    color: #6D4C5B;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+
+}
+
+#downloadPdfBtn:hover {
+
+    background: #FFF0F3;
+
+    border-color: #C87586;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(216, 140, 154, .15);
+
+}
+
+
+/* ==========================================
+   PDF RESUME RENDERING
+========================================== */
+
+.resume {
+
+    background: #ffffff !important;
+
+    color: #292329 !important;
+
+    box-sizing: border-box;
+
+}
+
+.resume * {
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+}
+
+.resume-section {
+
+    display: block;
+
+    visibility: visible;
+
+}
+
+.resume-header {
+
+    display: block;
+
+    visibility: visible;
+
+}
+
+
+/* ==========================================
+   PRINT / PDF
+========================================== */
+
+@media print {
+
+    body {
+
+        background: #ffffff !important;
+
+    }
+
+    body * {
+
+        visibility: hidden !important;
+
+    }
+
+    #resumeOutput,
+    #resumeOutput * {
+
+        visibility: visible !important;
+
+    }
+
+    #resumeOutput {
+
+        position: absolute;
+
+        left: 0;
+
+        top: 0;
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+    .resume {
+
+        width: 100% !important;
+
+        max-width: none !important;
+
+        margin: 0 !important;
+
+        padding: 20mm !important;
+
+        background: #ffffff !important;
+
+        box-shadow: none !important;
+
+    }
+
+    .resume-actions {
+
+        display: none !important;
+
+    }
+
+    @page {
+
+        size: A4;
+
+        margin: 0;
+
+    }
+
+}
+
+
+/* ==========================================
+   IMPROVE BOX
+========================================== */
+
+.improve-box {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border: 1px solid #E8CCD2;
+
+    border-radius: 14px;
+
+    background: #FFF8FA;
+
+}
+
+.improve-box.active {
+
+    display: block;
+
+}
+
+.improve-box label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+.improve-box textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #E8CCD2;
+
+    border-radius: 10px;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    box-sizing: border-box;
+
+    margin-bottom: 12px;
+
+    background: white;
+
+}
+
+#applyImprovementBtn,
+#improveResumeBtn {
+
+    cursor: pointer;
+
+    border: 1px solid #D8A7B1;
+
+    border-radius: 10px;
+
+    padding: 10px 18px;
+
+    background: #FFF0F3;
+
+    color: #6D4C5B;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+
+}
+
+#applyImprovementBtn:hover,
+#improveResumeBtn:hover {
+
+    background: #FBE1E7;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ==========================================
+   AI GENERATED RESUME
+========================================== */
+
+#resumeOutput .resume {
+
+    width: 794px;
+
+    max-width: 100%;
+
+    margin: 30px auto;
+
+    padding: 60px 65px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    color: #292329;
+
+    font-family: 'Poppins', sans-serif;
+
+    line-height: 1.6;
+
+    box-shadow:
+        0 15px 45px rgba(109, 76, 91, .12);
+
+    border: 1px solid #F0DCE1;
+
+}
+
+
+/* ==========================================
+   RESUME HEADER
+========================================== */
+
+#resumeOutput .resume-header {
+
+    text-align: center;
+
+    padding-bottom: 22px;
+
+    margin-bottom: 30px;
+
+    border-bottom: 2px solid #D8A7B1;
+
+}
+
+#resumeOutput .resume-header h1 {
+
+    margin: 0 0 12px;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #6D4C5B;
+
+    font-family: 'Playfair Display', Georgia, serif;
+
+}
+
+#resumeOutput .resume-header p {
+
+    margin: 4px 0;
+
+    font-size: 12px;
+
+    color: #7D6D73;
+
+}
+
+#resumeOutput .contact-info {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px 18px;
+
+    font-size: 12px;
+
+    color: #7D6D73;
+
+}
+
+
+/* ==========================================
+   RESUME SECTIONS
+========================================== */
+
+#resumeOutput .resume-section {
+
+    margin-bottom: 26px;
+
+}
+
+#resumeOutput .resume-section h2 {
+
+    margin: 0 0 10px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid #E8CCD2;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #6D4C5B;
+
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#resumeOutput .resume-section p {
+
+    margin: 0;
+
+    font-size: 13.5px;
+
+    line-height: 1.65;
+
+    color: #3F363B;
+
+}
+
+
+/* ==========================================
+   PRINT
+========================================== */
+
+@media print {
+
+    #resumeOutput .resume {
+
+        width: 210mm;
+
+        min-height: 297mm;
+
+        margin: 0;
+
+        padding: 18mm;
+
+        box-shadow: none;
+
+        border: none;
+
+    }
+
+}
