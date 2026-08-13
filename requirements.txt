@@ -22,3 +22,4 @@ tzdata==2026.2
 urllib3==2.6.3
 fastapi
 uvicorn
+python-dotenv
