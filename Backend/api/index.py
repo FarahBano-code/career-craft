@@ -1,3 +1,11 @@
+import sys
+from pathlib import Path
+
+# Allow Vercel to import ai.py and prompt.py
+# from the Backend directory.
+backend_dir = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(backend_dir))
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
@@ -36,7 +44,6 @@ def home():
 def generate_resume(data: ResumeRequest):
 
     try:
-
         prompt = build_resume_prompt(data)
 
         resume_html = generate_with_ai(prompt)
@@ -47,7 +54,6 @@ def generate_resume(data: ResumeRequest):
         }
 
     except Exception as e:
-
         raise HTTPException(
             status_code=500,
             detail=f"Failed to generate resume: {str(e)}"
